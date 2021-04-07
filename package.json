@@ -38,9 +38,15 @@
   "resolutions": {
     "**/@roadiehq/**/@backstage/core": "*",
     "**/@roadiehq/**/@backstage/plugin-catalog": "*",
-    "**/@roadiehq/**/@backstage/catalog-model": "*"
+    "**/@roadiehq/**/@backstage/catalog-model": "*",
+    "**/@microsoft/api-extractor/typescript": "^4.0.3"
   },
   "version": "1.0.0",
+  "dependencies": {
+    "@microsoft/api-extractor": "7.13.2-pr1916.0",
+    "@microsoft/api-documenter": "^7.12.16",
+    "@microsoft/api-extractor-model": "^7.12.2"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.14.0",
     "@octokit/openapi-types": "^2.2.0",

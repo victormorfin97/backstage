@@ -85,13 +85,11 @@ jobs:
       - name: type checking and declarations
         run: yarn tsc:full
 
-      - name: build changed packages
-        if: ${{ steps.yarn-lock.outcome == 'success' }}
-        run: yarn lerna -- run build --since origin/master --include-dependencies
-
       - name: build all packages
-        if: ${{ steps.yarn-lock.outcome == 'failure' }}
         run: yarn lerna -- run build
+
+      - name: check api reports
+        run: yarn build:api-reports:only --ci
 
       - name: verify type dependencies
         run: yarn lint:type-deps
